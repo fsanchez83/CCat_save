@@ -54,22 +54,27 @@ def get_respuestas(perfil,fecha_min=0,fecha_max=0):
             datos=r.json()
 
         for each_post in datos['posts']:
-            datos_cc[each_post['post']['comment']]=each_post['post']['reply']
-            last_ts_previo=last_ts
-            last_ts=each_post['post']['timestamp']
+            if (each_post['type']=='post'):
+                datos_cc[each_post['post']['comment']]=each_post['post']['reply']
+                last_ts_previo=last_ts
+                last_ts=each_post['post']['timestamp']
+            else:
+                datos_cc[each_post['status']['status']]='status'
+                last_ts_previo=last_ts
+                last_ts=each_post['status']['timestamp']                
             if(last_ts<timestamp_min):
                 break;
 
     return datos_cc
 
-perfil='Danielquinn_'
-perfil = sys.argv[1]
-fecha_min = sys.argv[2]
-fecha_max = sys.argv[3]
+perfil='pistachotostado'
+# perfil = sys.argv[1]
+# fecha_min = sys.argv[2]
+# fecha_max = sys.argv[3]
 Nom_arch="Ccat_"+perfil+".txt"
 
-datos_cc=get_respuestas(perfil,fecha_min,fecha_max)
-#datos_cc=get_respuestas(perfil,'0','01/07/2017')
+#datos_cc=get_respuestas(perfil,fecha_min,fecha_max)
+datos_cc=get_respuestas(perfil,'0','0')
 #datos_cc=get_respuestas(perfil,0,0)
 
 
