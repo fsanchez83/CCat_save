@@ -67,15 +67,12 @@ def get_respuestas(perfil,fecha_min=0,fecha_max=0):
 
     return datos_cc
 
-perfil='pistachotostado'
 perfil = sys.argv[1]
 fecha_min = sys.argv[2]
 fecha_max = sys.argv[3]
 Nom_arch="Ccat_"+perfil+".txt"
 
 datos_cc=get_respuestas(perfil,fecha_min,fecha_max)
-#datos_cc=get_respuestas(perfil,'0','0')
-#datos_cc=get_respuestas(perfil,0,0)
 
 
 f = open(Nom_arch,"w", encoding="utf-8")
