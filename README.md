@@ -18,5 +18,5 @@ El script solo utiliza la librería externa requests, como se puede ver en el re
 
 # Instalar desde un exe (sin tener Python)
 
-- Descargar CC_guarda.rar y descomprimir la carpeta
+- Descargar CC_guarda.zip y descomprimir la carpeta
 - Dentro de esa carpeta está el ejecutable CC_guarda.exe. Se puede ejecutar directamente desde línea de comandos (cmd) con los parámetros ya comentados. Por ejemplo, para descargar el perfil Danielquinn_ completo (para especificar fechas, ponerlas en lugar de los 0s): CC_guarda.exe Danielquinn_ 0 0
