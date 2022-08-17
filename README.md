@@ -1,7 +1,7 @@
 # CCat_save
 Guarda las respuestas de un perfil dado de Curious Cat, bien completo o bien entre dos fechas dadas
 
-Está probado con Python 3.6
+Está probado con Python 3.6 y 3.8
 
 El script tiene 3 parámetros:
 

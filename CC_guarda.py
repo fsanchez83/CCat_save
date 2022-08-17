@@ -11,7 +11,7 @@ import sys
 
 
 def get_respuestas(perfil, fecha_min=0, fecha_max=0):
-    query = "https://curiouscat.qa/api/v2.1/profile?username=" + perfil + "&_ob=both"
+    query = "https://curiouscat.live/api/v2.1/profile?username=" + perfil + "&_ob=both"
     # print(query)
 
     try:
@@ -50,8 +50,9 @@ def get_respuestas(perfil, fecha_min=0, fecha_max=0):
                 break
             if (last_ts == last_ts_previo):
                 break
-            r = requests.get("https://curiouscat.qa/api/v2.1/profile?username=" + perfil + "&max_timestamp=" + str(
+            r = requests.get("https://curiouscat.live/api/v2.1/profile?username=" + perfil + "&max_timestamp=" + str(
                 last_ts) + "&_ob=both")
+            print(r)
             datos = r.json()
         try:
             for each_post in datos['posts']:
